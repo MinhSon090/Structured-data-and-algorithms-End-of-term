@@ -105,6 +105,7 @@ int searchStudent(string targetId = "-1", bool displayResult = true) {
         if (s.id == targetId) {
             cout << "Found -> ID: " << s.id << " | Name: " << s.name << " | GPA: " << s.gpa << "\n";
             found = true;
+            break;
         }
         tempStack.push(s);
         mainStack.pop();
