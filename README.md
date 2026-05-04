@@ -13,34 +13,34 @@ The sorting mechanism utilizes `tempStack` as a sorted holding area. The program
 **File Initialization and Saving**
 The program uses a standard `.csv` file as permanent storage. Upon initialization, it reads the file line by line. Since standard file reading proceeds from the first line to the last, pushing each read line into the stack naturally places the first line at the bottom of `mainStack` and the last line at the top. When the program terminates, `mainStack` transfers all elements into `tempStack` to reverse their order. The program then writes elements from `tempStack` to the file, ensuring the chronological order is preserved in the database.
 
-## Time and Space Complexity Analysis
+# Time and Space Complexity Analysis
 
 ### 1. loadData()
-**Time Complexity:** O(n)  
-**Space Complexity:** O(1) (excluding stack memory)
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1) (excluding stack memory)
 
 **Explanation:** The function reads n lines from the file sequentially. Each line is processed in O(1) time, and pushing each element onto the stack is also O(1).
 
 ### 2. addStudent()
-**Time Complexity:** O(n)  
-**Space Complexity:** O(1)
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
 
 **Explanation:** The function calls `searchStudent()` to check for duplicate IDs. In the worst case, it must traverse the entire stack containing n elements. Then pushing the new element is O(1).
 
 ### 3. deleteStudent()
-**Time Complexity:** O(n)  
-**Space Complexity:** O(1)
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
 
 **Explanation:** In the worst case, the function must traverse the entire stack of n elements to find and delete the target. Moving elements between mainStack and tempStack takes O(n) time.
 
 ### 4. updateStudent()
-**Time Complexity:** O(n)  
-**Space Complexity:** O(1)
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
 
 **Explanation:** Similar to deleteStudent(), in the worst case it must traverse the entire stack. Moving elements between the two stacks takes O(n) time.
 
 ### 5. sortStudents()
-**Time Complexity:** O(n²)  
-**Space Complexity:** O(1)
+* **Time Complexity:** O(n²)  
+* **Space Complexity:** O(1)
 
 **Explanation:** Uses an insertion-sort-like algorithm with stacks. Each element from mainStack must be compared with all elements in tempStack. In the worst case, O(n²) comparisons and transfers are required.
