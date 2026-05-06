@@ -66,7 +66,6 @@ void saveData() {
     while (!tempStack.empty()) {
         Student s = tempStack.top();
         file << s.id << "," << s.name << "," << s.gpa << "\n";
-        mainStack.push(s);
         tempStack.pop();
     }
     file.close();

@@ -21,25 +21,43 @@ The program uses a standard `.csv` file as permanent storage. Upon initializatio
 
 **Explanation:** The function reads n lines from the file sequentially. Each line is processed in O(1) time, and pushing each element onto the stack is also O(1).
 
-### 2. addStudent()
+### 2. saveData()
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
+
+**Explanation:** The function transfers all n elements from mainStack to tempStack (O(n)), then writes each element to file and transfers back to mainStack (O(n)). Total is O(2n) = O(n).
+
+### 3. displayStudents()
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
+
+**Explanation:** The function pops all n elements from mainStack to tempStack for display (O(n)), then pushes all back to mainStack (O(n)). Total is O(2n) = O(n).
+
+### 4. addStudent()
 * **Time Complexity:** O(n)  
 * **Space Complexity:** O(1)
 
 **Explanation:** The function calls `searchStudent()` to check for duplicate IDs. In the worst case, it must traverse the entire stack containing n elements. Then pushing the new element is O(1).
 
-### 3. deleteStudent()
+### 5. deleteStudent()
 * **Time Complexity:** O(n)  
 * **Space Complexity:** O(1)
 
 **Explanation:** In the worst case, the function must traverse the entire stack of n elements to find and delete the target. Moving elements between mainStack and tempStack takes O(n) time.
 
-### 4. updateStudent()
+### 6. updateStudent()
 * **Time Complexity:** O(n)  
 * **Space Complexity:** O(1)
 
 **Explanation:** Similar to deleteStudent(), in the worst case it must traverse the entire stack. Moving elements between the two stacks takes O(n) time.
 
-### 5. sortStudents()
+### 7. searchStudent()
+* **Time Complexity:** O(n)  
+* **Space Complexity:** O(1)
+
+**Explanation:** The function must traverse all n elements in the worst case to find the target. Elements are moved to tempStack and back, which also takes O(n) time.
+
+### 8. sortStudents()
 * **Time Complexity:** O(n²)  
 * **Space Complexity:** O(1)
 
