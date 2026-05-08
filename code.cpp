@@ -214,10 +214,12 @@ void sortStudents() {
     }
 
     // Pour the sorted elements back into mainStack
+    // tempStack top is the lowest GPA. -> Ascending order
     while (!tempStack.empty()) {
         mainStack.push(tempStack.top());
         tempStack.pop();
     }
+    // mainStack top is the highest GPA. -> Descending order
     cout << "Stack sorted by GPA (Highest on top).\n";
 }
 
